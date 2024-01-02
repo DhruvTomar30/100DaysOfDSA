@@ -95,7 +95,41 @@ public class Hashing_Ques {
 
 
     // 05. InterSection of 2 Arrays....
-    
+    public static int interSection(int arr1[], int arr2[]){
+        HashSet<Integer> set =new HashSet<>();
+        int count=0;
+
+        for(int i=0;i<arr1.length;i++){
+            set.add(arr1[i]);
+        }
+        for(int j=0;j<arr2.length;j++){
+            if(set.contains(arr2[j])){
+                count++;
+                set.remove(arr2[j]);
+            }
+        }
+        return count;
+    }
+
+
+    // 06. Find Itinerary (journey path) from tickets...
+    public static String getStart(HashMap<String,String> tick){
+        HashMap<String,String> revMap =new HashMap<>();
+
+        // key-> key, value -> tick.get(key)  Original Map
+        for(String key : tick.keySet()){
+            revMap.put(tick.get(key), key);
+        }
+
+        for(String key : tick.keySet()){
+            if(!revMap.containsKey(key)){
+                return key;
+            }
+        }
+        return null;
+
+    }
+
 
 
 
@@ -122,13 +156,31 @@ public class Hashing_Ques {
         // Frequency(arr, n);
 
 
-        //04. Union of 2 arrays..
+        
         int arr1[]={7,3,9};
         int arr2[]={6,3,9,2,9,4};
-        System.out.println(union(arr1,arr2));
+
+        //04. Union of 2 arrays..
+        // System.out.println(union(arr1,arr2));                // 6
+
+        // 05. Intersection of arrays..
+        System.out.println(interSection(arr1,arr2));           // 2
 
 
-        // 05. 
+        //06. Itinerary from tickets...
+        HashMap<String, String> tickets = new HashMap<>();
+        tickets.put("Chennai","Bengaluru");
+        tickets.put("Mumbai", "Delhi");
+        tickets.put("Goa", "Chennai");
+        tickets.put("Delhi", "Goa");
+
+        String start = getStart(tickets);
+        while(tickets.containsKey(start)){
+            System.out.print(start+ "->");
+            start=tickets.get(start);
+        }
+        System.out.println(start);
+        
 
     
     
