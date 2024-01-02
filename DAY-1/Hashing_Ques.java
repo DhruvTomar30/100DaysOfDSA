@@ -1,5 +1,7 @@
+import java.util.*;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.HashSet;
 public class Hashing_Ques {
 
     // 01. Find all the elements that appears more than [n/3] times in Array....
@@ -78,7 +80,22 @@ public class Hashing_Ques {
 
 
     // 04. find the Union of 2 Arrays....
+    public static int union(int arr1[],int arr2[]){         // O(n)
+        HashSet<Integer>set=new HashSet<>();
 
+        for(int i=0;i<arr1.length;i++){
+            set.add(arr1[i]);
+        }
+        
+        for(int j=0;j<arr2.length;j++){
+            set.add(arr2[j]);
+        }
+        return set.size();
+    }
+
+
+    // 05. InterSection of 2 Arrays....
+    
 
 
 
@@ -102,11 +119,17 @@ public class Hashing_Ques {
         // 03. Highest/lowest frequency..
         int arr[] = {10, 5, 10, 15, 10, 5};
         int n = arr.length;
-        Frequency(arr, n);
+        // Frequency(arr, n);
 
 
+        //04. Union of 2 arrays..
+        int arr1[]={7,3,9};
+        int arr2[]={6,3,9,2,9,4};
+        System.out.println(union(arr1,arr2));
 
-        //04. 
+
+        // 05. 
+
     
     
     
