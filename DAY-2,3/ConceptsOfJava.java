@@ -68,6 +68,19 @@ public class ConceptsOfJava {
 
 
 
+    // Fibnacci Question.... 1 1 2 3 5 8 13 21
+    public static int Fib(int n){
+		int a=0,b=1,c;
+		for( int i=2; i<=n; i++){
+			 c=a+b;
+			 a=b;
+			 b=c;
+		}
+		return b;
+	}
+
+
+
 
 
     // Main...... 
@@ -81,7 +94,21 @@ public class ConceptsOfJava {
         double a[]={3,2};
         int ch=1;
         double result=areaSwitchCase(ch, a);
-        System.out.print(result);
+        // System.out.print(result);
+
+
+        // Fibnacci..
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        System.out.print(Fib(n));
+
+
+
+
+
+
+
+
     }
     
 }
