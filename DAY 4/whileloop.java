@@ -34,8 +34,17 @@ public class whileloop{
 
 
     public static void main(String args[]){
+        // Scanner sc=new Scanner(System.in);
+		// int n=sc.nextInt();
+		// System.out.print(sumDigitsodd(n)+" "+sumDigitseven(n));
+
+
+        // Area of Rectangle....
         Scanner sc=new Scanner(System.in);
-		int n=sc.nextInt();
-		System.out.print(sumDigitsodd(n)+" "+sumDigitseven(n));
+		int L=sc.nextInt();
+		int B=sc.nextInt();
+		int A=L * B;
+		System.out.print(A);
+		
     }
 }
