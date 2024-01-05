@@ -40,11 +40,20 @@ public class whileloop{
 
 
         // Area of Rectangle....
-        Scanner sc=new Scanner(System.in);
-		int L=sc.nextInt();
-		int B=sc.nextInt();
-		int A=L * B;
-		System.out.print(A);
+        // Scanner sc=new Scanner(System.in);
+		// int L=sc.nextInt();
+		// int B=sc.nextInt();
+		// int A=L * B;
+		// System.out.print(A);
+
+
+        // Input Output Format....
+        Scanner sc =new Scanner(System.in);
+		String name=sc.nextLine();
+		int age=sc.nextInt();
+
+		System.out.print("The name of the person is "+name+" and the age is "+age+".");
+		
 		
     }
 }
