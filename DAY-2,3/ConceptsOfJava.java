@@ -80,8 +80,37 @@ public class ConceptsOfJava {
 	}
 
 
-
-
+        // While Loop Question....
+    public static int sumDigitseven(int n) {
+		int even = 0;
+		int odd = 0;
+		
+	 while(n>0){
+		int lastDigit = n % 10;
+		if (lastDigit % 2 == 0) {
+			even += lastDigit;
+		} else {
+			odd += lastDigit;
+		}
+		n=n/10;
+	}
+        return odd;
+	}
+	public static int sumDigitsodd(int n) {
+		int even = 0;
+		int odd = 0;
+		
+	 while(n>0){
+		int lastDigit = n % 10;
+		if (lastDigit % 2 == 0) {
+			even += lastDigit;
+		} else {
+			odd += lastDigit;
+		}
+		n=n/10;
+	}
+        return even;
+	}
 
     // Main...... 
     public static void main(String args[]){
@@ -98,11 +127,14 @@ public class ConceptsOfJava {
 
 
         // Fibnacci..
+        // Scanner sc=new Scanner(System.in);
+        // int n=sc.nextInt();
+        // System.out.print(Fib(n));
+
+
         Scanner sc=new Scanner(System.in);
-        int n=sc.nextInt();
-        System.out.print(Fib(n));
-
-
+		int n=sc.nextInt();
+		System.out.print(sumDigitsodd(n)+" "+sumDigitseven(n));
 
 
 
