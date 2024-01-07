@@ -63,5 +63,7 @@ public class Patterns2{
     public static void main(String args[]){
         nNumberTriangle(n);
         nBinaryTriangle(n);
+        numberCrown(n);
+        LetterTriangle(n);
     }
 } 
