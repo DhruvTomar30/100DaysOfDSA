@@ -5,15 +5,15 @@ public class whileloop{
 		int even = 0;
 		int odd = 0;
 		
-	 while(n>0){
-		int lastDigit = n % 10;
-		if (lastDigit % 2 == 0) {
-			even += lastDigit;
-		} else {
-			odd += lastDigit;
+		while(n>0){
+			int lastDigit = n % 10;
+			if (lastDigit % 2 == 0) {
+				even += lastDigit;
+			} else {
+				odd += lastDigit;
+			}
+			n=n/10;
 		}
-		n=n/10;
-	}
         return odd;
 	}
 
@@ -22,17 +22,45 @@ public class whileloop{
 		int even = 0;
 		int odd = 0;
 		
-	 while(n>0){
-		int lastDigit = n % 10;
-		if (lastDigit % 2 == 0) {
-			even += lastDigit;
-		} else {
-			odd += lastDigit;
+		while(n>0){
+			int lastDigit = n % 10;
+			if (lastDigit % 2 == 0) {
+				even += lastDigit;
+			} else {
+				odd += lastDigit;
+			}
+			n=n/10;
 		}
-		n=n/10;
-	}
         return even;
 	}
+
+	public static void symmetry(int n) {
+        for (int i =1;i<=n;i++){
+            for (int j =1;j<=i;j++){
+                System.out.print("*"+" ");
+            }
+            for (int j = 1;j<=2*(n-i);j++){
+                System.out.print(" ");
+            }
+            for (int j = 1;j<=i;j++){
+                System.out.print("*"+" ");
+            }
+            System.out.println();
+        }
+
+        for(int i =n-1;i>=1;i--){
+            for (int j =1;j<=i;j++){
+                System.out.print("*"+" ");
+            }
+            for (int j = 1;j<=2*(n-i);j++){
+                System.out.print(" ");
+            }
+            for (int j = 1;j<=i;j++){
+                System.out.print("*"+" ");
+            }
+            System.out.println();
+        }
+    }   
 
 
     public static void main(String args[]){
