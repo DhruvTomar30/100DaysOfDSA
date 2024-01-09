@@ -45,4 +45,53 @@ public class Patterns3 {
             System.out.println();
         }
     }
+
+    // 4th code...
+    public static void symmetry(int n) {
+        // Write your code here
+        for(int i=1;i<=n;i++){
+            // stars
+            for(int j=1;j<=n-i+1;j++){
+                System.out.print("*"+" ");
+            }
+            // spaces
+            for(int j=1;j<=(2*i)-2;j++){
+                 System.out.print(" ");
+            }
+            // stars
+             for(int j=1;j<=n-i+1;j++){
+                System.out.print("*"+" ");
+            }
+            System.out.println();
+        }
+        // lower symmetry... 
+        for(int i=1;i<=n;i++){
+            // stars
+            for(int j=1;j<=i;j++){
+                System.out.print("*"+" ");
+            }
+            // spaces
+            for(int j=1;j<=(2*n-2*i);j++){
+                 System.out.print(" ");
+            }
+            // stars
+             for(int j=1;j<=i;j++){
+                System.out.print("*"+" ");
+            }
+            System.out.println();
+        }
+    }
+
+
+
+
+
+
+
+
+    
+    public static void main(String args[]){
+        int n=3;
+        symmetry(n);
+    }
 }
