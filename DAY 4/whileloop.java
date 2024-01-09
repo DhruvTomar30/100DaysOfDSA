@@ -16,6 +16,8 @@ public class whileloop{
 	}
         return odd;
 	}
+
+	// Sum digits...
 	public static int sumDigitsodd(int n) {
 		int even = 0;
 		int odd = 0;
