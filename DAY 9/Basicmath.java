@@ -1,4 +1,4 @@
-public class BasicMaths {
+public class Basicmath{
     // GCD of 2 numbers..
     public static int calcGCD(int n, int m){
         int ans=1;
@@ -11,4 +11,20 @@ public class BasicMaths {
         System.out.println();
         return ans;
     }
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
