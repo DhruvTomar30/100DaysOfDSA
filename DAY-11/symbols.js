@@ -13,3 +13,5 @@ console.log(symbol3.toString());
 
 console.log(Symbol('foo') === Symbol('foo'));
 // Expected output: false
+
+DAY-11/symbols.js
