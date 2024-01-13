@@ -31,6 +31,20 @@ public class NinjaRecursion {
     }
 
 
+    // 03. Print Names upto n Times..
+    public static List<String> print(List<String> l, int n){
+        if(n>0){
+            l.add("Coding Ninjas");
+            print(l, n-1);
+        }
+        return l;
+    }
+
+    public static List<String> printNtimes(int n){
+        List<String> l= new java.util.ArrayList<>();
+        return print(l,n);
+    }
+
 
 
 
