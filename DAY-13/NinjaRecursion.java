@@ -67,6 +67,13 @@ public class NinjaRecursion {
         System.out.println(Arrays.toString(result));
         System.out.println(Arrays.toString(resultt));
 
+        //04. Sum code..
+        long n1 = 3;
+        System.out.println(sumFirstN(n1)); 
+
+        long n2 = 5;
+        System.out.println(sumFirstN(n2));
+
 
     }
 }
