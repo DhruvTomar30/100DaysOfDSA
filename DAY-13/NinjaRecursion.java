@@ -46,7 +46,9 @@ public class NinjaRecursion {
     }
 
     // 04.. Sum of first N nautral Numbers
-    
+    public static long sumFirstN(long n) {
+        return n * (n + 1) / 2;
+    }
 
 
 
