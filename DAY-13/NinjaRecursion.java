@@ -45,6 +45,9 @@ public class NinjaRecursion {
         return print(l,n);
     }
 
+    // 04.. Sum of first N nautral Numbers
+    
+
 
 
 
