@@ -129,5 +129,11 @@ public class NinjaRecursion {
         System.out.println(sumFirstN(n2));
 
 
+        // 06.. Reverse array..
+        int n=8;
+        int nums[]={3,5,6,9,12,5,3,8};
+        System.out.print(Arrays.toString(reverseArray(n,nums)));
+
+
     }
 }
