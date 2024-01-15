@@ -50,12 +50,48 @@ public class NinjaRecursion {
         return n * (n + 1) / 2;
     }
 
-    // 05. Fibonacci Code....
-    public static int factnum(int n){
-        if(n==0) return 1;
-        return n * factnum(n-1);
+    // 05. Factorial Code....
+    public static long fact(long n){
+        if(n==1){
+            return 1;
+        }
+        return (n * fact(n-1));
+    }
+    public static List<Long> factorialNumbers(long n) {
+        
+        List<Long> l= new ArrayList<>();
+        if(n==1){
+            l.add(n);
+            return l;
+        }
+        else{
+            for(int i=1;i<=n;i++){
+                long fact=fact(i);
+                if(fact<=n){
+                    l.add(fact);
+                }
+                else{
+                    break;
+                }
+            }
+
+        }
+        return l;
+        
     }
 
+
+    // 06.. Reverse an Array..
+    public static int[] reverseArray(int n, int []nums) {
+        int arr[]=new int[n];
+        int size=nums.length;
+        for(int i=0;i<=n;i++){
+            if(size==0) break;
+            arr[i]=nums[size-1];
+            size--;
+        }
+        return arr;
+    }
 
 
 
