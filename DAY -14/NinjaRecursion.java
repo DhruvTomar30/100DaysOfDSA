@@ -93,6 +93,18 @@ public class NinjaRecursion {
         return arr;
     }
 
+        // 'or'
+
+        public static void revArray(int [] nums, int start, int end){
+        if(start<end){
+            // swapping... 
+            int temp=nums[start];
+            nums[start]=nums[end];
+            nums[end]=temp;
+            revArray(nums, start+1, end-1);
+        }
+    }
+
 
 
 
