@@ -146,5 +146,16 @@ public class NinjaRecursion {
         System.out.print(Arrays.toString(reverseArray(n,nums)));
 
 
+        //07.. String code..
+        Scanner sc=new Scanner(System.in);
+        String str=sc.next();
+        boolean ans=isPalindrome(0, str);
+        if(ans==true){
+            System.out.print("It is Palindrome");
+        }
+        else{
+            System.out.print("It is not Palindrome");
+        }
+
     }
 }
