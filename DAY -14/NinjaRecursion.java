@@ -95,7 +95,7 @@ public class NinjaRecursion {
 
         // 'or'
 
-        public static void revArray(int [] nums, int start, int end){
+    public static void revArray(int [] nums, int start, int end){
         if(start<end){
             // swapping... 
             int temp=nums[start];
@@ -103,6 +103,17 @@ public class NinjaRecursion {
             nums[end]=temp;
             revArray(nums, start+1, end-1);
         }
+    }
+
+    // 07.... String or not... 
+    public static boolean isPalindrome(int i,String str) {
+        // Base Case..
+        if(i>=str.length()/2) 
+            return true;
+        if(str.charAt(i)!= str.charAt(str.length()-1-i))
+            return false;
+        
+        return isPalindrome(i+1,str);
     }
 
 
