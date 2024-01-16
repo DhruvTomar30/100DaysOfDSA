@@ -114,6 +114,30 @@ public class NinjaRecursion {
             return false;
         
         return isPalindrome(i+1,str);
+    }       
+    
+        // 'or' ...... 
+    public static boolean isPalindrome(String str) {
+        return isPalindromeReverse(str, 0, str.length()-1);
+    }
+    public static boolean isPalindromeReverse(String str, int left, int right){
+        // Base case if there is only 1 value of str.
+        if(left>=right)
+            return true;
+            
+        char l=str.charAt(left);
+        char r=str.charAt(right);
+        
+        if(!Character.isLetterOrDigit(l))
+            return isPalindromeReverse(str, left+1, right);
+
+        else if(!Character.isLetterOrDigit(r))
+            return isPalindromeReverse(str, left, right-1);
+        
+        if(Character.toLowerCase(l)!=Character.toLowerCase(r))
+            return false;
+        
+        return isPalindromeReverse(str, left+1, right-1);
     }
 
 
