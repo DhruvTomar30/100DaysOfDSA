@@ -141,7 +141,23 @@ public class NinjaRecursion {
     }
 
     // 08.  Fibonacci Number.... 
+     public static int[] generateFibonacciNumbers(int n) {
+        if (n <= 0) {
+            // Handle invalid input
+            return new int[0];
+        }
 
+        int[] result = new int[n];
+        result[0] = 0;
+        if (n > 1) {
+            result[1] = 1;
+            for (int i = 2; i < n; i++) {
+                result[i] = result[i - 1] + result[i - 2];
+            }
+        }
+
+        return result;
+    }
 
 
 
@@ -185,6 +201,7 @@ public class NinjaRecursion {
 
 
         // 08. fibonacci Number..... 
+        
         
 
 
