@@ -110,9 +110,9 @@ public class Recursion {
     static boolean Palindromee(String str){
         int left=0, right=str.length()-1;
         while(left<right){
-            // Special Character... 
             char l=str.charAt(left);
             char r=str.charAt(right);
+             // Special Character... 
             if(!Character.isLetterOrDigit(l)){
                 left++;
             }
