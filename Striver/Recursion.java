@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Recursion2 {
+public class Recursion {
 
     // Qus. 1 Print number from n to 1 (Decreasing order)..
     public static void printDec(int n){
