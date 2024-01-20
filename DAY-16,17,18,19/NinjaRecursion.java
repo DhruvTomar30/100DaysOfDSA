@@ -201,7 +201,14 @@ public class NinjaRecursion {
 
 
         // 08. fibonacci Number..... 
-        
+        int n = 10;
+        int[] fibonacciNumbers =generateFibonacciNumbers(n);
+
+        // Displaying the result
+        System.out.println("First " + n + " Fibonacci numbers:");
+        for (int i = 0; i < n; i++) {
+            System.out.print(fibonacciNumbers[i] + " ");
+        }
         
 
 
