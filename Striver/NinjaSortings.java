@@ -2,7 +2,7 @@ public class NinjaSortings {
 
     // 01. Selection Sort....
     public static void selectionSort(int[] arr) {
-        for(int i=0;i<=arr.length-1;i++){
+        for(int i=0;i<arr.length-1;i++){
             int minpos=i;
             for(int j=i+1;j<arr.length;j++){
                 if(arr[minpos]>arr[j]){
@@ -14,6 +14,13 @@ public class NinjaSortings {
             arr[minpos]=arr[i];
             arr[i]=temp;
         }
+
+        // 'or' ........ 
+        for(int i=0; i<=arr.length-2;i++){
+            int minpos=i;
+            for(int j=i;j<arr.length-1;j++)
+        }
+        
     }
 
     // 02. Bubble Sort...
