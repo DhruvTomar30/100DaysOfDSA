@@ -64,13 +64,14 @@ public class Hashing_Ques {
             int count = entry.getValue();
             int element = entry.getKey();
 
-            if (count > maxFreq) {
-                maxEle = element;
+            if (count > maxFreq || (count == maxFreq && element < maxEle)) {
                 maxFreq = count;
+                maxEle = element;
             }
-            if (count < minFreq) {
-                minEle = element;
+
+            if (count < minFreq || (count == minFreq && element < minEle)) {
                 minFreq = count;
+                minEle = element;
             }
         }
 
