@@ -128,7 +128,30 @@ public class Hashing_Ques {
             }
         }
         return null;
+    }
 
+    // 07. Frequency of the most Frequent Element.... 
+    // leet code ... input;- [1,2,4]  ouput- 3, increment 1,2 by 3 and 2 so [4,4,4]... 
+
+    public static int maxFrequency(int[] nums, int k) {
+        Arrays.sort(nums);
+        int n = nums.length;
+        int left = 0;
+        int maxFreq = 0;
+        long currentSum = 0;
+
+        for (int right = 0; right < n; right++) {
+            currentSum += nums[right];
+
+            while ((right - left + 1) * (long) nums[right] - currentSum > k) {
+                currentSum -= nums[left];
+                left++;
+            }
+
+            maxFreq = Math.max(maxFreq, right - left + 1);
+        }
+
+        return maxFreq;
     }
 
 
@@ -181,6 +204,20 @@ public class Hashing_Ques {
             start=tickets.get(start);
         }
         System.out.println(start);
+
+
+        // 07. Freq of most freq. element..
+        int[] nums1 = {1, 2, 4};
+        int k1 = 5;
+        System.out.println(maxFrequency(nums1, k1));  // Output: 3
+
+        int[] nums2 = {1, 4, 8, 13};
+        int k2 = 5;
+        System.out.println(maxFrequency(nums2, k2));  // Output: 2
+
+        int[] nums3 = {3, 9, 6};
+        int k3 = 2;
+        System.out.println(maxFrequency(nums3, k3));  // Output: 1
         
 
     
