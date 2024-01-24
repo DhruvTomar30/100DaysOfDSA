@@ -205,6 +205,19 @@ public class Hashing_Ques {
         System.out.println(start);
         
 
+        // 07. Freq of most freq. element..
+        int[] nums1 = {1, 2, 4};
+        int k1 = 5;
+        System.out.println(maxFrequency(nums1, k1));  // Output: 3
+
+        int[] nums2 = {1, 4, 8, 13};
+        int k2 = 5;
+        System.out.println(maxFrequency(nums2, k2));  // Output: 2
+
+        int[] nums3 = {3, 9, 6};
+        int k3 = 2;
+        System.out.println(maxFrequency(nums3, k3));  // Output: 1
+
     
     
     
