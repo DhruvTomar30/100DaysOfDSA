@@ -41,25 +41,9 @@ public class SortingII{
         }
     }
 
-
-
-
-
-
-
-
-    // Main....
-    public static void main(String[] args) {
-        int N = 7;
-        int[] ARR = {2, 13, 4, 1, 3, 6, 28};
-        int l = 0;
-        int r = N - 1;
-
-        mergeSort(ARR, l, r);
-
-        System.out.print("Sorted array: ");
-        for (int num : ARR) {
-            System.out.print(num + " ");
+    public static void print(int arr[]){
+        for(int i=0; i<arr.length;i++){
+            System.out.print(arr[i]+" ");
         }
     }
 
@@ -70,14 +54,10 @@ public class SortingII{
 
 
 
-
-
-
-
-
-
-
-    public static void main(String args[]){
-        
+    // Main....
+    public static void main(String[] args) {
+        int arr[]={6,3,9,5,2,8};
+        mergeSort(arr,0,arr.length-1);
+        print(arr);
     }
 }
