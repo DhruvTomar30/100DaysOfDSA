@@ -1,53 +1,40 @@
 public class SortingII{
 
-    // Merge Sort....
-    public static void mergeSort(int[] arr, int l, int r) {
-        if (l < r) {
-            int m = l + (r - l) / 2;
-
-            mergeSort(arr, l, m);
-            mergeSort(arr, m + 1, r);
-
-            merge(arr, l, m, r);
-        }
+    // 01. Merge Sort....
+    public static void mergeSort(int[] arr, int si, int ei) {
+        if(si >= ei) return;        // Base Case
+        int mid= si + (ei-si)/2;
+        mergeSort(arr,si,mid);
+        mergeSort(arr,mid+1, ei);
+        merge(arr,si,mid,ei);
     }
-    public static void merge(int[] arr, int l, int m, int r) {
-        int n1 = m - l + 1;
-        int n2 = r - m;
 
-        int[] leftArr = new int[n1];
-        int[] rightArr = new int[n2];
+    public static void merge(int arr[], int si, int mid, int ei){
+        int temp[]=new int[ei-si+1];
+        int i= si;      // idx for 1st sorted part
+        int j= mid+1;   // idx for 2nd sorted part
+        int k=0;        // idx for temp
 
-        for (int i = 0; i < n1; ++i)
-            leftArr[i] = arr[l + i];
-
-        for (int j = 0; j < n2; ++j)
-            rightArr[j] = arr[m + 1 + j];
-
-        int i = 0, j = 0, k = l;
-
-        while (i < n1 && j < n2) {
-            if (leftArr[i] <= rightArr[j]) {
-                arr[k] = leftArr[i];
+        while(i<=mid && j<=ei){
+            if(arr[i]<arr[j]){
+                temp[k]=arr[i];
                 i++;
-            } else {
-                arr[k] = rightArr[j];
+            }
+            else{
+                temp[k]=arr[j];
                 j++;
             }
             k++;
         }
-
-        while (i < n1) {
-            arr[k] = leftArr[i];
-            i++;
-            k++;
+        // for left overelements of 1st sorted part
+        while(i<=mid){
+            temp[k++]=arr[i++];
         }
-
-        while (j < n2) {
-            arr[k] = rightArr[j];
-            j++;
-            k++;
+        // for left over elements of 2nd Sorted part..
+        while(j<=ei){
+            temp[k++]=arr[j++];
         }
+        
     }
 
 
