@@ -34,7 +34,11 @@ public class SortingII{
         while(j<=ei){
             temp[k++]=arr[j++];
         }
-        
+
+        // copy the temp array into original array
+        for(k=0, i=si; k<temp.length; k++, i++){
+            arr[i]=temp[k];
+        }
     }
 
 
