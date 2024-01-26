@@ -76,4 +76,21 @@ public class SortingII{
 		return i;
 	}
 
+
+    // Main....
+    public static void main(String[] args) {
+
+        // 01. Merge Sort....
+        int arr[]={6,3,9,5,2,8};
+        // mergeSort(arr,0,arr.length-1);
+        // print(arr);
+    
+
+        //02. Quick Sort...
+        quickSort(arr,0,arr.length-1);
+        print(arr);
+
+
+    }
+
 }
