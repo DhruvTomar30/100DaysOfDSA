@@ -1,6 +1,6 @@
 public class SortingII{
-    public static void main(String args[]){
-        // 01. Merge Sort....
+
+    // 01. Merge Sort....
     public static void mergeSort(int[] arr, int si, int ei) {
         if(si >= ei) return;        // Base Case
         int mid= si + (ei-si)/2;
@@ -47,6 +47,4 @@ public class SortingII{
         }
     }
 
-
-    }
 }
