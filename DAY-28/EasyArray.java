@@ -66,7 +66,22 @@ public class EasyArray{
 
 
     // 05. Left Rotate an Array by one place....
-    
+    static int[] rotateArray(int[] arr, int n) {
+        // Write your code here.
+        int temp = arr[0]; 
+        for (int i = 0; i < n - 1; i++) {
+            arr[i] = arr[i + 1];
+        }
+        arr[n - 1] = temp; 
+
+
+        // Populate and return the ans array
+        int ans[] = new int[n];
+        for (int i = 0; i < n; i++) {
+            ans[i] = arr[i];
+        }
+        return ans;
+    }
 
     
 
