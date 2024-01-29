@@ -41,8 +41,18 @@ public class EasyArray{
         return result;
     }
 
+    // 03. Array is Sorted or not ....
+    public static int isSorted(int n, int []a) {
+        // Write your code here.
+        for(int i=0;i<a.length-1;i++){
+            if(a[i]>a[i+1]){
+                return 0;
+            }
+        }
+        return 1;
+    }
 
-    // 03. Remove Duplicates in the Array...
+    // 04. Remove Duplicates in the Array...
     public static int removeDuplicates(int[] arr,int n) {
         int i = 0;
         for (int j = 1; j < arr.length; j++) {
@@ -55,7 +65,24 @@ public class EasyArray{
     }
 
 
-    // 04. Left Rotate an Array by one place....
+    // 05. Left Rotate an Array by one place....
+    static int[] rotateArray(int[] arr, int n) {
+        // Write your code here.
+        int temp = arr[0]; 
+        for (int i = 0; i < n - 1; i++) {
+            arr[i] = arr[i + 1];
+        }
+        arr[n - 1] = temp; 
+
+
+        // Populate and return the ans array
+        int ans[] = new int[n];
+        for (int i = 0; i < n; i++) {
+            ans[i] = arr[i];
+        }
+        return ans;
+    }
+
     
 
 
