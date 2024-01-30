@@ -102,7 +102,23 @@ public class EasyArray{
     }
 
     // 08. Find the Union... 
+    public static List< Integer > sortedArray(int []a, int []b) {
+        // Write your code here
+        HashSet<Integer>set=new HashSet<>();
+        ArrayList < Integer > Union=new ArrayList<>();
 
+        for(int i=0;i<a.length;i++){
+            set.add(a[i]);
+        }
+        
+        for(int j=0;j<b.length;j++){
+            set.add(b[j]);
+        }
+        for (int val: set){
+            Union.add(val);
+        }
+        return Union;
+    }
 
     // 09. Find missing numbers in an Array... 
 
