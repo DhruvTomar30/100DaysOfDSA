@@ -136,7 +136,8 @@ public class EasyArray{
 
     // Main...... 
     public static void main(String args[]){
-        int n=5;
-        
+        int n=5; 
+        int nums[]={2,5,6,1,8,7,3};
+
     }
 }
