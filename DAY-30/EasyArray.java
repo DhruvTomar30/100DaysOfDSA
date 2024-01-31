@@ -135,6 +135,11 @@ public class EasyArray{
     }
 
     // 10. Maximum Consecutive Ones.....
+
+
+
+
+    // 11. Find the number that appears once, and the other numbers twice... 
     
 
 
