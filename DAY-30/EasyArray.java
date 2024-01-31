@@ -140,11 +140,13 @@ public class EasyArray{
 
 
     // 11. Find the number that appears once, and the other numbers twice... 
-    
 
 
 
 
+    // 12. Longest Subarray with given Sum K(Positives)..
+
+    // 13. Longest Subarray with given Sum K(Positives and Negatives)
 
 
     // Main...... 
