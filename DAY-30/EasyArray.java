@@ -146,7 +146,9 @@ public class EasyArray{
 
     // 12. Longest Subarray with given Sum K(Positives)..
 
-    // 13. Longest Subarray with given Sum K(Positives and Negatives)
+
+
+    // 13. Longest Subarray with given Sum K(Positives and Negatives)... 
 
 
     // Main...... 
