@@ -134,7 +134,8 @@ public class EasyArray{
         return missingNum;
     }
 
-
+    // 10. Maximum Consecutive Ones.....
+    
 
 
 
