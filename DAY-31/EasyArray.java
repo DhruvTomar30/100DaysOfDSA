@@ -83,9 +83,11 @@ public class EasyArray{
         return ans;
     }
 
+    // 06. Left Rotate an Array by D place to the right....
     
 
 
+    
 
 
 
