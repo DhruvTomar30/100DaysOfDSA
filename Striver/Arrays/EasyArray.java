@@ -130,9 +130,14 @@ public class EasyArray{
         for(int i=n-k;i<n;i++){
             temp[i-n+k]=arr[i];
         }
-        for(int i=n-k-1;i>=0;i--){
-            arr[i+k]=arr[i];
+        // for(int i=n-k-1;i>=0;i--){
+        //     arr[i+k]=arr[i];
+        // }
+
+        for(int i=0;i<k;i++){
+            arr[n-k+i]=arr[i];
         }
+
         for(int i=0;i<k;i++){
             arr[i]=temp[i];
         }
@@ -146,9 +151,33 @@ public class EasyArray{
     }
 
 
+    // 07.. Move Zeros to end of the Array.... 
+    public static int[] moveZeros(int n, int []arr) {
+        int k=0; // idx for temp
+        int temp[]=new int[n];
+        for(int i=0;i<arr.length;i++){
+            if(arr[i]==0){
+                temp[n-1-i]=arr[i];         //[0,0]
+            }
+        }
+        for(int i=0; i<arr.length;i++){
+            if(arr[i]!=0){
+                temp[k++]=arr[i];
+            }
+        }
+        // copy temp arr to original array...
+        for(int  i=0;i<temp.length;i++){
+            arr[i]=temp[i];
+        }
+        int result[]=new int[n];
+        for(int i=0;i<arr.length;i++){
+            result[i]=arr[i];
+        }
+        return result;
+    }
 
 
-    // 07. Linear Search ...
+    // 08. Linear Search ...
     public static int linearSearch(int n, int num, int []arr){
         // Write your code here.
         for(int i=0;i<n;i++){
