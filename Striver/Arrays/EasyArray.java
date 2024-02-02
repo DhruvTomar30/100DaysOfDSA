@@ -119,7 +119,40 @@ public class EasyArray{
     }
     
 
+    // *** Rotate Array k elements to Right...**** 
+    public static void RotateeletoRight(int arr[], int n, int k){
+        if(n==0)
+            return;
+        k=k%n;
+        if(k>n)
+            return;
+        int temp[]=new int[k];
+        for(int i=n-k;i<n;i++){
+            temp[i-n+k]=arr[i];
+        }
+        for(int i=n-k-1;i>=0;i--){
+            arr[i+k]=arr[i];
+        }
+        for(int i=0;i<k;i++){
+            arr[i]=temp[i];
+        }
+    }
 
+    // ***** Recursive Approach to Right ***** ...
+    public static void Reverse(int arr[], int start, int end){      // f(n). to reverse Array
+        while(start<=end){
+            int temp=arr[start];
+            arr[start]=arr[end];
+            arr[end]=temp;
+            start++;
+            end--;
+        }
+    }
+    public static void RotateRight(int arr[], int n, int k){
+        Reverse(arr,0,n-k-1);   // first n-k ele
+        Reverse(arr,n-k,n-1);    // last k ele
+        Reverse(arr, 0, n-1);   // whole Array
+    }
 
 
 
@@ -153,6 +186,8 @@ public class EasyArray{
 
         RotateeletoRight(arr, n, k);
         System.out.print("After Rotating the k elements to right ");
+
+        // Recursive R
         
         for (int i = 0; i < n; i++)
         System.out.print(arr[i] + " ");
