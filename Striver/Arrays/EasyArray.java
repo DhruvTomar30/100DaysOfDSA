@@ -83,6 +83,26 @@ public class EasyArray{
         return ans;
     }
 
+    //06. Rotate array by k elements to left...
+    public static void Rotateeletoleft(int arr[], int n, int k){
+        if(n==0)
+            return;
+        k=k%n;
+        if(k>n)
+            return;
+        int temp[]=new int[k];
+        for(int i=0; i<k; i++){
+            temp[i]=arr[i];
+        }
+        for(int i=0;i<n-k;i++){             // 0+3= 3, 1+3=4   means 3,4 index ele i.e. 4,5 comes at arr[0], arr[1]
+            arr[i]=arr[i+k];
+        }
+        for(int i=n-k; i<n;i++){
+            arr[i]=temp[i-n+k];                 //arr[2] = (2-5+3)=0 temp[0], temp[1], temp[2]= 1,2,3
+        }
+    }
+
+    // 
     
 
 
@@ -106,6 +126,16 @@ public class EasyArray{
 
     // Main...... 
     public static void main(String args[]){
+        int[] arr = {1,2,3,4,5};
+        int n = 5;
+        int k = 3;
+        Rotateeletoleft(arr, n, k);
+        System.out.print("After Rotating the k elements to left ");
+        // RotateeletoRight(arr, n, k);
+        // System.out.print("After Rotating the k elements to right ");
         
+        for (int i = 0; i < n; i++)
+        System.out.print(arr[i] + " ");
+        System.out.println();
     }
 }
