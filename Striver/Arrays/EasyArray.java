@@ -139,15 +139,6 @@ public class EasyArray{
     }
 
     // ***** Recursive Approach to Right ***** ...
-    public static void Reverse(int arr[], int start, int end){      // f(n). to reverse Array
-        while(start<=end){
-            int temp=arr[start];
-            arr[start]=arr[end];
-            arr[end]=temp;
-            start++;
-            end--;
-        }
-    }
     public static void RotateRight(int arr[], int n, int k){
         Reverse(arr,0,n-k-1);   // first n-k ele
         Reverse(arr,n-k,n-1);    // last k ele
@@ -184,10 +175,11 @@ public class EasyArray{
 
 
 
-        RotateeletoRight(arr, n, k);
+        // RotateeletoRight(arr, n, k);
         System.out.print("After Rotating the k elements to right ");
 
-        // Recursive R
+        // Recursive Right...
+        RotateRight(arr, n, k);
         
         for (int i = 0; i < n; i++)
         System.out.print(arr[i] + " ");
