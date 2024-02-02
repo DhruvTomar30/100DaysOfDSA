@@ -102,7 +102,21 @@ public class EasyArray{
         }
     }
 
-    // 
+    // Reversal Approach for rotate ele to left...
+    public static void Reverse(int arr[], int start, int end){      // f(n). to reverse Array
+        while(start<=end){
+            int temp=arr[start];
+            arr[start]=arr[end];
+            arr[end]=temp;
+            start++;
+            end--;
+        }
+    }
+    public static void Rotateleft(int arr[], int n, int k){
+        Reverse(arr, 0, k-1);   // first k ele.
+        Reverse(arr, k, n-1);   // last n-k ele
+        Reverse(arr, 0, n-1);   // Whole Array
+    }
     
 
 
@@ -129,10 +143,16 @@ public class EasyArray{
         int[] arr = {1,2,3,4,5};
         int n = 5;
         int k = 3;
-        Rotateeletoleft(arr, n, k);
-        System.out.print("After Rotating the k elements to left ");
-        // RotateeletoRight(arr, n, k);
-        // System.out.print("After Rotating the k elements to right ");
+        // Rotateeletoleft(arr, n, k);
+        // System.out.print("After Rotating the k elements to left ");
+
+        // Recursive Left...
+        // Rotateleft(arr,n, k);
+
+
+
+        RotateeletoRight(arr, n, k);
+        System.out.print("After Rotating the k elements to right ");
         
         for (int i = 0; i < n; i++)
         System.out.print(arr[i] + " ");
