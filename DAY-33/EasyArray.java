@@ -209,22 +209,22 @@ public class EasyArray{
     }
 
     // 09.. Union of 2 Arrays... (Using Sets) // T.c, S.c= O(m+n)
-    public static List< Integer > sortedArray(int []a, int []b) {
-        HashSet<Integer>set=new HashSet<>();
-        ArrayList < Integer > Union=new ArrayList<>();
+    // public static List< Integer > sortedArray(int []a, int []b) {
+    //     HashSet<Integer>set=new HashSet<>();
+    //     ArrayList < Integer > Union=new ArrayList<>();
 
-        for(int i=0;i<a.length;i++){
-            set.add(a[i]);
-        }
+    //     for(int i=0;i<a.length;i++){
+    //         set.add(a[i]);
+    //     }
         
-        for(int j=0;j<b.length;j++){
-            set.add(b[j]);
-        }
-        for (int val: set){
-            Union.add(val);
-        }
-        return Union;
-    }
+    //     for(int j=0;j<b.length;j++){
+    //         set.add(b[j]);
+    //     }
+    //     for (int val: set){
+    //         Union.add(val);
+    //     }
+    //     return Union;
+    // }
 
     // Using Maps   // T.c, S.c= O(m+n)
     static ArrayList<Integer> FindUnion(int arr1[], int arr2[], int n, int m) {
@@ -241,7 +241,44 @@ public class EasyArray{
     }
 
     // Using two-pointers... (gurantee to maintains the sorted order of Result) // T.C.= O(m+N), space- O(1)
-    
+    public static List<Integer> sortedArray(int a[], int b[]){
+        int n1=a.length;
+        int n2=b.length;
+        int i=0;
+        int j=0;
+        ArrayList<Integer> union=new ArrayList<>();
+        while(i<n1 && j<n2){
+            if(a[i]<b[j]){
+                if(union.size()==0 || union.get(union.size()-1)!=a[i]){
+                    union.add(a[i]);
+                }
+                i++;
+            }
+            else{
+                if(union.size()==0 || union.get(union.size()-1)!=b[j]){
+                    union.add(b[j]);
+                }
+                j++;
+            }
+        }
+        // Left over elements of a[i] Array..
+        while(i<n1){
+            if(union.size()==0 || union.get(union.size()-1)!=a[i]){
+                union.add(a[i]);
+            }
+            i++;
+        }
+        // Left over elements of b[j] Array..
+        while(j<n2){
+            if(union.size()==0 || union.get(union.size()-1)!=b[j]){
+                union.add(b[j]);
+            }
+            j++;
+        }
+        return union;
+    }   
+
+
 
 
     // Main...... 
@@ -272,5 +309,11 @@ public class EasyArray{
         int arr[]={1,2,3,4,5,7,8};
         int n=arr.length;
         System.out.print(binarySearch(arr,key,0,n-1));
-    }
+
+        // Union 2- pointer..
+        int a[]={1,3,5};
+        int b[]={1,2,4,5,6};
+        List<Integer> result = sortedArray(a, b);
+        System.out.println("Union of the sorted arrays: " + result);
+    }   
 }
