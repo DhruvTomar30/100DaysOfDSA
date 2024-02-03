@@ -208,6 +208,40 @@ public class EasyArray{
         return -1;
     }
 
+    // 09.. Union of 2 Arrays... (Using Sets) // T.c, S.c= O(m+n)
+    public static List< Integer > sortedArray(int []a, int []b) {
+        HashSet<Integer>set=new HashSet<>();
+        ArrayList < Integer > Union=new ArrayList<>();
+
+        for(int i=0;i<a.length;i++){
+            set.add(a[i]);
+        }
+        
+        for(int j=0;j<b.length;j++){
+            set.add(b[j]);
+        }
+        for (int val: set){
+            Union.add(val);
+        }
+        return Union;
+    }
+
+    // Using Maps   // T.c, S.c= O(m+n)
+    static ArrayList<Integer> FindUnion(int arr1[], int arr2[], int n, int m) {
+        HashMap <Integer,Integer > freq=new HashMap<>();
+        ArrayList<Integer> Union=new ArrayList<>();
+        for (int i = 0; i < n; i++)
+            freq.put(arr1[i],freq.getOrDefault(arr1[i],0)+1);
+            
+        for (int i = 0; i < m; i++)
+            freq.put(arr2[i],freq.getOrDefault(arr2[i],0)+1);
+        for (int it: freq.keySet())
+            Union.add(it);
+        return Union;
+    }
+
+    // Using two-pointers... (gurantee to maintains the sorted order of Result) // T.C.= O(m+N), space- O(1)
+    
 
 
     // Main...... 
