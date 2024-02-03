@@ -139,6 +139,9 @@ public class EasyArray{
         }
 
         for(int i=0;i<k;i++){
+            arr[n-1-i]=arr[i];
+        }
+        for(int i=0;i<k;i++){
             arr[i]=temp[i];
         }
     }
@@ -149,7 +152,6 @@ public class EasyArray{
         Reverse(arr,n-k,n-1);    // last k ele
         Reverse(arr, 0, n-1);   // whole Array
     }
-
 
     // 07.. Move Zeros to end of the Array.... 
     public static int[] moveZeros(int n, int []arr) {
@@ -177,6 +179,8 @@ public class EasyArray{
     }
 
 
+
+
     // 08. Linear Search ...
     public static int linearSearch(int n, int num, int []arr){
         // Write your code here.
@@ -187,8 +191,22 @@ public class EasyArray{
         return -1;
     }
 
-    
 
+    // Binary Search... 
+    public static int binarySearch(int arr[], int key, int si, int ei){
+        while(si<=ei){
+            int mid=si+(ei-si)/2;
+            if(arr[mid]==key)
+                return mid;
+            if(arr[mid]<key){       // right
+                si=mid+1;
+            }
+            else if(arr[mid]>key){
+                ei=mid-1;           // left
+            }
+        }
+        return -1;
+    }
 
 
 
@@ -205,14 +223,20 @@ public class EasyArray{
 
 
 
-        // RotateeletoRight(arr, n, k);
+        RotateeletoRight(arr, n, k);
         System.out.print("After Rotating the k elements to right ");
 
         // Recursive Right...
-        RotateRight(arr, n, k);
+        // RotateRight(arr, n, k);
         
         for (int i = 0; i < n; i++)
         System.out.print(arr[i] + " ");
         System.out.println();
+
+        // Binary Search...
+        int key=5;
+        int arr[]={1,2,3,4,5,7,8};
+        int n=arr.length;
+        System.out.print(binarySearch(arr,key,0,n-1));
     }
 }
