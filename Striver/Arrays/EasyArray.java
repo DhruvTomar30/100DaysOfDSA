@@ -236,7 +236,42 @@ public class EasyArray{
     }
 
     // Using two-pointers... (gurantee to maintains the sorted order of Result) // T.C.= O(m+N), space- O(1)
-
+    public static List<Integer> sortedArray(int a[], int b[]){
+        int n1=a.length;
+        int n2=b.length;
+        int i=0;
+        int j=0;
+        ArrayList<Integer> union=new ArrayList<>();
+        while(i<n1 && j<n2){
+            if(a[i]<b[j]){
+                if(union.size()==0 || union.get(union.size()-1)!=a[i]){
+                    union.add(a[i]);
+                }
+                i++;
+            }
+            else{
+                if(union.size()==0 || union.get(union.size()-1)!=b[j]){
+                    union.add(b[j]);
+                }
+                j++;
+            }
+        }
+        // Left over elements of a[i] Array..
+        while(i<n1){
+            if(union.size()==0 || union.get(union.size()-1)!=a[i]){
+                union.add(a[i]);
+            }
+            i++;
+        }
+        // Left over elements of b[j] Array..
+        while(j<n2){
+            if(union.size()==0 || union.get(union.size()-1)!=b[j]){
+                union.add(b[j]);
+            }
+            j++;
+        }
+        return union;
+    }   
 
 
 
@@ -262,5 +297,11 @@ public class EasyArray{
         for (int i = 0; i < n; i++)
         System.out.print(arr[i] + " ");
         System.out.println();
+
+        // Union 2- pointer..
+        int a[]={1,3,5};
+        int b[]={1,2,4,5,6};
+        List<Integer> result = sortedArray(a, b);
+        System.out.println("Union of the sorted arrays: " + result);
     }
 }
