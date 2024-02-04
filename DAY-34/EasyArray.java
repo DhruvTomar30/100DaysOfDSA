@@ -388,5 +388,13 @@ public class EasyArray{
         long[] B1 = {2, 4, 5, 0, 1};
         boolean output1 = check(N1, A1, B1);
         System.out.println(output1);  
+
+        
+        int Matrix[][] = { { 1, 2, 3, 4 }, 
+                           { 5, 6, 7, 8 }, 
+                           { 9, 10, 11, 12 }, 
+                           { 13, 14, 15, 16 } };
+        printSpiral(Matrix);
+
     }   
 }
