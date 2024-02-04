@@ -279,7 +279,25 @@ public class EasyArray{
     }   
 
     // ***  Check if 2 arrays are equal or not... 
-    
+    static boolean check(int N, long[] A, long[] B) {
+        // Create HashMaps to store the frequency of elements in both arrays
+        Map<Long, Integer> freqA = new HashMap<>();
+        Map<Long, Integer> freqB = new HashMap<>();
+
+        // Count the frequency of elements in array A
+        for (long num : A) {
+            freqA.put(num, freqA.getOrDefault(num, 0) + 1);
+        }
+
+        // Count the frequency of elements in array B
+        for (long num : B) {
+            freqB.put(num, freqB.getOrDefault(num, 0) + 1);
+        }
+
+        // Check if the frequencies of elements are the same in both arrays
+        return freqA.equals(freqB);
+    }
+
 
 
 
