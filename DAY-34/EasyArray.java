@@ -278,7 +278,8 @@ public class EasyArray{
         return union;
     }   
 
-    // ***  Check 
+    // ***  Check if 2 arrays are equal or not... 
+    
 
 
 
