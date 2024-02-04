@@ -298,6 +298,18 @@ public class EasyArray{
         return freqA.equals(freqB);
     }
 
+    // 'or' .....
+     public static boolean check(long A[],long B[],int N)
+    {
+        Arrays.sort(A);
+        Arrays.sort(B);
+        if(Arrays.equals(A,B)){
+            return true;
+        }
+        return false;
+        
+    }
+
 
 
 
