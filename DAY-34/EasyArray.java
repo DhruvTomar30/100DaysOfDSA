@@ -348,5 +348,12 @@ public class EasyArray{
         int b[]={1,2,4,5,6};
         List<Integer> result = sortedArray(a, b);
         System.out.println("Union of the sorted arrays: " + result);
+
+        // 2 Arrays are equal or not...
+        int N1 = 5;
+        long[] A1 = {1, 2, 5, 4, 0};
+        long[] B1 = {2, 4, 5, 0, 1};
+        boolean output1 = check(N1, A1, B1);
+        System.out.println(output1);  
     }   
 }
