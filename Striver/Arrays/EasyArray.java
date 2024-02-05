@@ -361,6 +361,9 @@ public class EasyArray{
     }
 
 
+    // Ques- 12 Find No. that appears once in the Array...
+    
+
 
 
 
