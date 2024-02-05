@@ -385,7 +385,11 @@ public class EasyArray{
         return result;
 
         // 'or' ....
-        
+        int r=0;
+        for(int i=0;i<arr.length;i++){
+            r= r^arr[i];
+        }
+        return r;
 
 
 
