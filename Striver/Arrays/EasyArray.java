@@ -139,6 +139,9 @@ public class EasyArray{
         }
 
         for(int i=0;i<k;i++){
+            arr[n-1-i]=arr[i];
+        }
+        for(int i=0;i<k;i++){
             arr[i]=temp[i];
         }
     }
@@ -149,7 +152,6 @@ public class EasyArray{
         Reverse(arr,n-k,n-1);    // last k ele
         Reverse(arr, 0, n-1);   // whole Array
     }
-
 
     // 07.. Move Zeros to end of the Array.... 
     public static int[] moveZeros(int n, int []arr) {
@@ -177,6 +179,8 @@ public class EasyArray{
     }
 
 
+
+
     // 08. Linear Search ...
     public static int linearSearch(int n, int num, int []arr){
         // Write your code here.
@@ -186,6 +190,7 @@ public class EasyArray{
         }
         return -1;
     }
+
 
     // Binary Search... 
     public static int binarySearch(int arr[], int key, int si, int ei){
@@ -204,22 +209,22 @@ public class EasyArray{
     }
 
     // 09.. Union of 2 Arrays... (Using Sets) // T.c, S.c= O(m+n)
-    public static List< Integer > sortedArray(int []a, int []b) {
-        HashSet<Integer>set=new HashSet<>();
-        ArrayList < Integer > Union=new ArrayList<>();
+    // public static List< Integer > sortedArray(int []a, int []b) {
+    //     HashSet<Integer>set=new HashSet<>();
+    //     ArrayList < Integer > Union=new ArrayList<>();
 
-        for(int i=0;i<a.length;i++){
-            set.add(a[i]);
-        }
+    //     for(int i=0;i<a.length;i++){
+    //         set.add(a[i]);
+    //     }
         
-        for(int j=0;j<b.length;j++){
-            set.add(b[j]);
-        }
-        for (int val: set){
-            Union.add(val);
-        }
-        return Union;
-    }
+    //     for(int j=0;j<b.length;j++){
+    //         set.add(b[j]);
+    //     }
+    //     for (int val: set){
+    //         Union.add(val);
+    //     }
+    //     return Union;
+    // }
 
     // Using Maps   // T.c, S.c= O(m+n)
     static ArrayList<Integer> FindUnion(int arr1[], int arr2[], int n, int m) {
@@ -273,6 +278,90 @@ public class EasyArray{
         return union;
     }   
 
+    // ***  Check if 2 arrays are equal or not... 
+    static boolean check(int N, long[] A, long[] B) {
+        // Create HashMaps to store the frequency of elements in both arrays
+        Map<Long, Integer> freqA = new HashMap<>();
+        Map<Long, Integer> freqB = new HashMap<>();
+
+        // Count the frequency of elements in array A
+        for (long num : A) {
+            freqA.put(num, freqA.getOrDefault(num, 0) + 1);
+        }
+
+        // Count the frequency of elements in array B
+        for (long num : B) {
+            freqB.put(num, freqB.getOrDefault(num, 0) + 1);
+        }
+
+        // Check if the frequencies of elements are the same in both arrays
+        return freqA.equals(freqB);
+    }
+
+    // 'or' .....
+     public static boolean check(long A[],long B[],int N)
+    {
+        Arrays.sort(A);
+        Arrays.sort(B);
+        if(Arrays.equals(A,B)){
+            return true;
+        }
+        return false;
+        
+    }
+    // Spiral Matrix Code....
+    public static void printSpiral(int Matrix[][]) {
+        int startRow = 0;
+        int endRow = Matrix.length - 1;
+        int startCol = 0;
+        int endCol = Matrix[0].length - 1;
+
+        while (startRow <= endRow && startCol <= endCol) {
+            // Top
+            for (int j = startCol; j <= endCol; j++) {
+                System.out.print(Matrix[startRow][j] + " ");
+            }
+            // Right
+            for (int i = startRow + 1; i <= endRow; i++) {
+                System.out.print(Matrix[i][endCol] + " ");
+            }
+            // Bottom
+            for (int j = endCol - 1; j >= startCol; j--) {
+                System.out.print(Matrix[endRow][j] + " ");
+            }
+            // Left
+            for (int i = endRow - 1; i >= startRow+1; i--) {
+                System.out.print(Matrix[i][startCol] + " ");
+            }
+
+            startRow++;
+            startCol++;
+            endCol--;
+            endRow--;
+        }
+        System.out.println();
+    }
+
+
+    // ques- 11 Find Consecutive ones in Array...
+    public int findMaxConsecutiveOnes(int[] nums) {
+        int count=0; int temp=0;
+        for(int i=0;i<nums.length;i++){
+            if(nums[i]==1){
+                count++;
+                // temp++;
+            }
+            else{
+                // count=temp-count;     // 0
+                count=0;
+            }
+            temp=Math.max(temp,count);
+        }
+        return temp;                    // return count;
+    }
+
+
+
 
 
     // Main...... 
@@ -288,20 +377,41 @@ public class EasyArray{
 
 
 
-        // RotateeletoRight(arr, n, k);
+        RotateeletoRight(arr, n, k);
         System.out.print("After Rotating the k elements to right ");
 
         // Recursive Right...
-        RotateRight(arr, n, k);
+        // RotateRight(arr, n, k);
         
         for (int i = 0; i < n; i++)
         System.out.print(arr[i] + " ");
         System.out.println();
+
+        // Binary Search...
+        int key=5;
+        int arr[]={1,2,3,4,5,7,8};
+        int n=arr.length;
+        System.out.print(binarySearch(arr,key,0,n-1));
 
         // Union 2- pointer..
         int a[]={1,3,5};
         int b[]={1,2,4,5,6};
         List<Integer> result = sortedArray(a, b);
         System.out.println("Union of the sorted arrays: " + result);
-    }
+
+        // 2 Arrays are equal or not...
+        int N1 = 5;
+        long[] A1 = {1, 2, 5, 4, 0};
+        long[] B1 = {2, 4, 5, 0, 1};
+        boolean output1 = check(N1, A1, B1);
+        System.out.println(output1);  
+
+        
+        int Matrix[][] = { { 1, 2, 3, 4 }, 
+                           { 5, 6, 7, 8 }, 
+                           { 9, 10, 11, 12 }, 
+                           { 13, 14, 15, 16 } };
+        printSpiral(Matrix);
+
+    }   
 }
