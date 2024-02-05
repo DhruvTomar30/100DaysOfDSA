@@ -384,6 +384,9 @@ public class EasyArray{
         }
         return result;
 
+        // 'or' ....
+        
+
 
 
 
