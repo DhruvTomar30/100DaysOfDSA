@@ -77,6 +77,21 @@ public class Solution{
 
     // Main .... 
     public static void main(String args[]){
+        
+        // 02. code 
+        int n = 6;
+        ArrayList<Integer> arr = new ArrayList<>(Arrays.asList(new Integer[] {0, 2, 1, 2, 0, 1}));
+        sortArray(arr, n);
+        System.out.println("After sorting:");
+        for (int i = 0; i < n; i++) {
+            System.out.print(arr.get(i) + " ");
+        }
+        System.out.println();
+
+        // 03.. Majority element..
+         int[] arr = {2, 2, 1, 1, 1, 2, 2};
+        int ans = majorityElement(arr);
+        System.out.println("The majority element is: " + ans);
 
     }
 }
