@@ -78,6 +78,13 @@ public class Solution{
     // Main .... 
     public static void main(String args[]){
         
+        //01. 2 sum 
+        int n = 5;
+        int[] arr = {2, 6, 5, 8, 11};
+        int target = 14;
+        String ans = twoSum(n, arr, target);
+        System.out.println("This is the answer for variant 1: " + ans);
+
         // 02. code 
         int n = 6;
         ArrayList<Integer> arr = new ArrayList<>(Arrays.asList(new Integer[] {0, 2, 1, 2, 0, 1}));
