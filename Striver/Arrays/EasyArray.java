@@ -412,7 +412,7 @@ public class EasyArray{
         return len;
 
         // Hashing Method... 
-    Map<Long, Integer> preSumMap = new HashMap<>();
+        Map<Long, Integer> preSumMap = new HashMap<>();
         long sum = 0;
         int maxLen = 0;
         for (int i = 0; i < n; i++) {
@@ -439,7 +439,13 @@ public class EasyArray{
             }
         }
         return maxLen;
+
+        // 2 Pointer... 
+        
+
     }
+
+
 
     
     
