@@ -67,7 +67,25 @@ public class Solution{
         return -1;
     }
 
-    // 04... 
+    // 04.. Kadan's Algorithm ..... 
+     public static int maxSubarraySum(int[] arr, int n) {
+        int maxi = Integer.MIN_VALUE; // maximum sum
+
+
+        // Brute Force... 
+        for (int i = 0; i < n; i++) {
+            for (int j = i; j < n; j++) {
+                int sum = 0;
+
+                //add all the elements of subarray:
+                for (int k = i; k <= j; k++) {
+                    sum += arr[k];
+                }
+                maxi = Math.max(maxi, sum);
+            }
+        }
+        return maxi;
+    }
 
 
 
