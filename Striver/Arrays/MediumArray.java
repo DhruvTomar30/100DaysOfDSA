@@ -69,6 +69,23 @@ public class Solution{
 
     // 04... 
 
+    // 06.. Buy and Sell Stock... 
+    public static int bestTimeToBuyAndSellStock(int []prices) {
+        // Write your code here.
+        int buyPrice=Integer.MAX_VALUE;
+        int maxprofit=0;
+        for(int i=0;i<prices.length;i++){
+            if(buyPrice<prices[i]){ //profit
+                int profit=prices[i]-buyPrice;
+                maxprofit=Math.max(maxprofit, profit);
+            }
+            else{
+                buyPrice=prices[i];
+            }
+        }
+        return maxprofit;
+    }
+
 
 
 
