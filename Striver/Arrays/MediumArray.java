@@ -113,7 +113,21 @@ public class Solution{
         System.out.println("max sum is:"+ maxSum);
     } 
 
-    
+     // III. KADAN'S Algorithm         
+    // O(n)... Optimal Approach..
+    public static void printSumofSubArrays(int nums[]){
+        int currSum=0;
+        int maxSum= Integer.MIN_VALUE;
+        for(int i=0; i<nums.length;i++){
+            currSum += nums[i];
+            if(currSum < 0){
+                currSum=0;
+            }
+            maxSum= Math.max(currSum, maxSum);
+        }
+        System.out.println("max sum is:"+ maxSum);
+    }
+
 
     // 06.. Buy and Sell Stock... 
     public static int bestTimeToBuyAndSellStock(int []prices) {
