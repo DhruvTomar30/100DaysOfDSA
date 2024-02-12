@@ -87,6 +87,88 @@ public class Solution{
         return maxi;
     }   
 
+// I-  Find Sum of SubArrays and Print Max Sum....
+    // I- Brute Force..    O(n^3)... 
+    public static void printSumofSubArrays(int nums[]){
+        int currSum=0;
+        int maxSum=Integer.MIN_VALUE;
+        for(int i=0;i<nums.length;i++){
+            int start=i;
+            for(int j=1;j<nums.length;j++){
+                int end=j;
+                for(int k=start;k<=end;k++){
+                    currSum+=nums[k];
+                }
+                System.out.println(currSum);
+                if(maxSum < currSum){
+                    maxSum=currSum;
+                }
+            }
+        }
+        System.out.println("max sum is:"+ maxSum);
+    }
+
+
+
+
+
+
+    // II- Prefix Sum   O(n^2)... 
+    public static void printSumofSubArrays(int nums[]){
+        int currSum=0;
+        int maxSum=Integer.MIN_VALUE;
+        int Prefix[]=new int[nums.length];
+
+        prefix[0]=nums[0];
+        for(int i=1; i<prefix.length;i++){
+            // calculate array prefix..
+            prefix[i]=prefix[i-1]+nums[i];
+        }
+        for(int i=0;i<nums.length;i++){
+            int start=i;
+            for(int j=i;j<nums.length;i++){
+                int end =j;
+
+                currSum=start == 0 ? prefix[end] : prefix[end] - prefix[start -1];
+                if(maxSum < currSum){
+                    maxsum =currSum;
+                }
+            }
+        }
+        System.out.println("max sum is:"+ maxSum);
+    } 
+
+
+
+
+
+    // III. KADAN'S Algorithm         
+    // O(n)... Optimal Approach..
+    public static void printSumofSubArrays(int nums[]){
+        int currSum=0;
+        int maxSum= Integer.MIN_VALUE;
+        for(int i=0; i<nums.length;i++){
+            currSum += nums[i];
+            if(currSum < 0){
+                currSum=0;
+            }
+            maxSum= Math.max(currSum, maxSum);
+        }
+        System.out.println("max sum is:"+ maxSum);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
     // 06. Buy and Sell Stock....
     public static int bestTimeToBuyAndSellStock(int []prices) {
         // Write your code here.
@@ -103,6 +185,18 @@ public class Solution{
         }
         return maxprofit;
     }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -130,6 +224,10 @@ public class Solution{
          int[] arr = {2, 2, 1, 1, 1, 2, 2};
         int ans = majorityElement(arr);
         System.out.println("The majority element is: " + ans);
+
+        // Sum of SubArrays and print max sum.....
+        int nums[]={2,4,6,8,10};
+        printSumofSubArrays(numbers);
 
     }
 }
