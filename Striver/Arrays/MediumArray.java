@@ -88,6 +88,32 @@ public class Solution{
         System.out.println("max sum is:"+ maxSum);
     }
 
+     // II- Prefix Sum   O(n^2)... 
+    public static void printSumofSubArrays(int nums[]){
+        int currSum=0;
+        int maxSum=Integer.MIN_VALUE;
+        int Prefix[]=new int[nums.length];
+
+        prefix[0]=nums[0];
+        for(int i=1; i<prefix.length;i++){
+            // calculate array prefix..
+            prefix[i]=prefix[i-1]+nums[i];
+        }
+        for(int i=0;i<nums.length;i++){
+            int start=i;
+            for(int j=i;j<nums.length;i++){
+                int end =j;
+
+                currSum=start == 0 ? prefix[end] : prefix[end] - prefix[start -1];
+                if(maxSum < currSum){
+                    maxsum =currSum;
+                }
+            }
+        }
+        System.out.println("max sum is:"+ maxSum);
+    } 
+
+    
 
     // 06.. Buy and Sell Stock... 
     public static int bestTimeToBuyAndSellStock(int []prices) {
