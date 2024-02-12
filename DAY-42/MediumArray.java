@@ -108,11 +108,6 @@ public class Solution{
         System.out.println("max sum is:"+ maxSum);
     }
 
-
-
-
-
-
     // II- Prefix Sum   O(n^2)... 
     public static void printSumofSubArrays(int nums[]){
         int currSum=0;
@@ -137,10 +132,6 @@ public class Solution{
         }
         System.out.println("max sum is:"+ maxSum);
     } 
-
-
-
-
 
     // III. KADAN'S Algorithm         
     // O(n)... Optimal Approach..

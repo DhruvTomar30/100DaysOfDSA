@@ -67,7 +67,27 @@ public class Solution{
         return -1;
     }
 
-    // 04... 
+    // 04.. // I-  Find Sum of SubArrays and Print Max Sum....
+    // I- Brute Force..    O(n^3)... 
+    public static void printSumofSubArrays(int nums[]){
+        int currSum=0;
+        int maxSum=Integer.MIN_VALUE;
+        for(int i=0;i<nums.length;i++){
+            int start=i;
+            for(int j=1;j<nums.length;j++){
+                int end=j;
+                for(int k=start;k<=end;k++){
+                    currSum+=nums[k];
+                }
+                System.out.println(currSum);
+                if(maxSum < currSum){
+                    maxSum=currSum;
+                }
+            }
+        }
+        System.out.println("max sum is:"+ maxSum);
+    }
+
 
     // 06.. Buy and Sell Stock... 
     public static int bestTimeToBuyAndSellStock(int []prices) {
