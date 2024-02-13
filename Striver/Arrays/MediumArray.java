@@ -10,23 +10,33 @@ public class Solution{
             }
         }
         return "NO";
-    }
-
-    // Better Approach.. O(n)
-    HashMap<Integer, Integer> map=new HashMap<>();
-    for(int i=0;i<n;i++){
-        int num=arr[i];
-        int rem=target-num;
-        if(map.containsKey(rem)){
-            return "YES";
-        }
-        map.put(arr[i],i);
-    }
-    return "NO";
-
-    // Optimal Approach.. (O(N)+ O(N* logn))
     
 
+        // Better Approach.. O(n)
+        HashMap<Integer, Integer> map=new HashMap<>();
+        for(int i=0;i<n;i++){
+            int num=arr[i];
+            int rem=target-num;
+            if(map.containsKey(rem)){
+                return "YES";
+            }
+            map.put(arr[i],i);
+        }
+        return "NO";
+
+        // Optimal Approach.. (O(N)+ O(N* logn))
+        Arrays.sort(arr);
+        int left=0, right=n-1;
+        while(left<right){
+            int sum=arr[left]+arr[right];
+            if(sum==target){
+                return "YeS";
+            }
+            else if(sum<target) left++;
+            else right--;
+        }
+        return "NO";
+    }
     // 02..   Sort An Array of 0s, 1s and 2s ..
      public static void sortArray(ArrayList<Integer> arr, int n) {
         // Write your code here.
