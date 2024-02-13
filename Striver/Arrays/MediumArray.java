@@ -95,17 +95,21 @@ public class Solution{
         }
         return -1;
 
-    // Better Approach- HashMap- O(N * logn) + O(N)
-    
+        // Better Approach- HashMap- O(N * logn) + O(N)
+        HashMap<Integer, Integer> map= new HashMap<>();
+        for(int i=0;i<n;i++){
+            int value=map.getOrDefault(v[i],0);
+            map.put(v[i],value +1);
+        }
+        // searching for majority element..
+        for(Map.Entry<Integer,Integer>entry: new entrySet()){
+            if(entry.getValue() > (n/2)){
+                return entry.getKey();
+            }
+        }
+        return -1;
 
-
-
-
-
-
-
-
-        // Write your code here
+        // 
         int n = v.length;
         int cnt = 0; // count
         int el = 0; // Element
