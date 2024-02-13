@@ -11,7 +11,6 @@ public class Solution{
         }
         return "NO";
     
-
         // Better Approach.. O(n)
         HashMap<Integer, Integer> map=new HashMap<>();
         for(int i=0;i<n;i++){
@@ -37,11 +36,24 @@ public class Solution{
         }
         return "NO";
     }
-    // 02..   Sort An Array of 0s, 1s and 2s ..
-     public static void sortArray(ArrayList<Integer> arr, int n) {
-        // Write your code here.
-        int low = 0, mid = 0, high = n - 1; // 3 pointers
 
+
+    // 02..   Sort An Array of 0s, 1s and 2s ..
+
+    // Better O(N)+O(N)... 
+     public static void sortArray(ArrayList<Integer> arr, int n) {
+        int cnt0=0, cnt1=0, cnt2=0;
+        for(int i=0;i<n;i++){
+            if(arr.get(i)==0) cnt0++;
+            else if(arr.get(i)==1) cnt1++;
+            else cnt2++;
+        }
+        for(int i=0;i<cnt0; i++) arr.set(i,0);
+        for(int i=cnt0;i<cnt0+ cnt1; i++) arr.set(i,1);
+        for(int i=cnt0 + cnt1+ cnt2; i<n; i++) arr.set(i,2);
+
+    // Optimal Approach O(n).....
+    int low = 0, mid = 0, high = n - 1; // 3 pointers
         while (mid <= high) {
             if (arr.get(mid) == 0) {
                 // swapping arr[low] and arr[mid]
