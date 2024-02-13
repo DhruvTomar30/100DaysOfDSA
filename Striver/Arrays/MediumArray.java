@@ -79,7 +79,32 @@ public class Solution{
     }
 
     // 03... Majority Element (>n/2 times)..
+    // Brute Approach.. O(N^2)
     public static int majorityElement(int []v) {
+        int n=v.length;
+        for(int i=0;i<n;i++){
+            int cnt=0;
+            for(int j=0;j<n;j++){
+                if(v[j]==v[i]){
+                    cnt++;
+                }
+            }
+            if(cnt>(n/2)){
+                return v[i];
+            }
+        }
+        return -1;
+
+    // Better Approach- HashMap- O(N * logn) + O(N)
+    
+
+
+
+
+
+
+
+
         // Write your code here
         int n = v.length;
         int cnt = 0; // count
