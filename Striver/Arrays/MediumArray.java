@@ -1,6 +1,7 @@
 public class Solution{
 
     // 01..  2 Sum Code 
+    // Brute Approach.. O(n^2)
     public static String read(int n, int []arr, int target){
         // Write your code here.
         for(int i = 0; i < n; i++) {
@@ -10,6 +11,21 @@ public class Solution{
         }
         return "NO";
     }
+
+    // Better Approach.. O(n)
+    HashMap<Integer, Integer> map=new HashMap<>();
+    for(int i=0;i<n;i++){
+        int num=arr[i];
+        int rem=target-num;
+        if(map.containsKey(rem)){
+            return "YES";
+        }
+        map.put(arr[i],i);
+    }
+    return "NO";
+
+    // Optimal Approach.. (O(N)+ O(N* logn))
+    
 
     // 02..   Sort An Array of 0s, 1s and 2s ..
      public static void sortArray(ArrayList<Integer> arr, int n) {
