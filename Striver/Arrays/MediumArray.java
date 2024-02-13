@@ -109,7 +109,7 @@ public class Solution{
         }
         return -1;
 
-        // 
+        // optimal...  Moore's Voting Algorithm...
         int n = v.length;
         int cnt = 0; // count
         int el = 0; // Element
@@ -122,7 +122,6 @@ public class Solution{
             } else if (el == v[i]) cnt++;
             else cnt--;
         }
-
         //checking if the stored element
         // is the majority element:
         int cnt1 = 0;
