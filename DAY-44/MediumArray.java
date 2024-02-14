@@ -1,6 +1,7 @@
 public class Solution{
 
     // 01..  2 Sum Code 
+    // Brute Approach.. O(n^2)
     public static String read(int n, int []arr, int target){
         // Write your code here.
         for(int i = 0; i < n; i++) {
@@ -9,15 +10,50 @@ public class Solution{
             }
         }
         return "NO";
+    
+        // Better Approach.. O(n)
+        HashMap<Integer, Integer> map=new HashMap<>();
+        for(int i=0;i<n;i++){
+            int num=arr[i];
+            int rem=target-num;
+            if(map.containsKey(rem)){
+                return "YES";
+            }
+            map.put(arr[i],i);
+        }
+        return "NO";
+
+        // Optimal Approach.. (O(N)+ O(N* logn))
+        Arrays.sort(arr);
+        int left=0, right=n-1;
+        while(left<right){
+            int sum=arr[left]+arr[right];
+            if(sum==target){
+                return "YeS";
+            }
+            else if(sum<target) left++;
+            else right--;
+        }
+        return "NO";
     }
 
-    
 
     // 02..   Sort An Array of 0s, 1s and 2s ..
-     public static void sortArray(ArrayList<Integer> arr, int n) {
-        // Write your code here.
-        int low = 0, mid = 0, high = n - 1; // 3 pointers
 
+    // Better O(N)+O(N)... 
+     public static void sortArray(ArrayList<Integer> arr, int n) {
+        int cnt0=0, cnt1=0, cnt2=0;
+        for(int i=0;i<n;i++){
+            if(arr.get(i)==0) cnt0++;
+            else if(arr.get(i)==1) cnt1++;
+            else cnt2++;
+        }
+        for(int i=0;i<cnt0; i++) arr.set(i,0);
+        for(int i=cnt0;i<cnt0+ cnt1; i++) arr.set(i,1);
+        for(int i=cnt0 + cnt1+ cnt2; i<n; i++) arr.set(i,2);
+
+    // Optimal Approach O(n).....
+    int low = 0, mid = 0, high = n - 1; // 3 pointers
         while (mid <= high) {
             if (arr.get(mid) == 0) {
                 // swapping arr[low] and arr[mid]
@@ -43,8 +79,37 @@ public class Solution{
     }
 
     // 03... Majority Element (>n/2 times)..
+    // Brute Approach.. O(N^2)
     public static int majorityElement(int []v) {
-        // Write your code here
+        int n=v.length;
+        for(int i=0;i<n;i++){
+            int cnt=0;
+            for(int j=0;j<n;j++){
+                if(v[j]==v[i]){
+                    cnt++;
+                }
+            }
+            if(cnt>(n/2)){
+                return v[i];
+            }
+        }
+        return -1;
+
+        // Better Approach- HashMap- O(N * logn) + O(N)
+        HashMap<Integer, Integer> map= new HashMap<>();
+        for(int i=0;i<n;i++){
+            int value=map.getOrDefault(v[i],0);
+            map.put(v[i],value +1);
+        }
+        // searching for majority element..
+        for(Map.Entry<Integer,Integer>entry: new entrySet()){
+            if(entry.getValue() > (n/2)){
+                return entry.getKey();
+            }
+        }
+        return -1;
+
+        // optimal...  Moore's Voting Algorithm...
         int n = v.length;
         int cnt = 0; // count
         int el = 0; // Element
@@ -57,7 +122,6 @@ public class Solution{
             } else if (el == v[i]) cnt++;
             else cnt--;
         }
-
         //checking if the stored element
         // is the majority element:
         int cnt1 = 0;
@@ -69,27 +133,7 @@ public class Solution{
         return -1;
     }
 
-    // 04.. Kadan's Algorithm ..... 
-     public static int maxSubarraySum(int[] arr, int n) {
-        int maxi = Integer.MIN_VALUE; // maximum sum
-
-
-        // Brute Force... 
-        for (int i = 0; i < n; i++) {
-            for (int j = i; j < n; j++) {
-                int sum = 0;
-
-                //add all the elements of subarray:
-                for (int k = i; k <= j; k++) {
-                    sum += arr[k];
-                }
-                maxi = Math.max(maxi, sum);
-            }
-        }
-        return maxi;
-    }   
-
-// I-  Find Sum of SubArrays and Print Max Sum....
+    // 04.. // I-  Find Sum of SubArrays and Print Max Sum....
     // I- Brute Force..    O(n^3)... 
     public static void printSumofSubArrays(int nums[]){
         int currSum=0;
@@ -110,7 +154,7 @@ public class Solution{
         System.out.println("max sum is:"+ maxSum);
     }
 
-    // II- Prefix Sum   O(n^2)... 
+     // II- Prefix Sum   O(n^2)... 
     public static void printSumofSubArrays(int nums[]){
         int currSum=0;
         int maxSum=Integer.MIN_VALUE;
@@ -135,7 +179,7 @@ public class Solution{
         System.out.println("max sum is:"+ maxSum);
     } 
 
-    // III. KADAN'S Algorithm         
+     // III. KADAN'S Algorithm         
     // O(n)... Optimal Approach..
     public static void printSumofSubArrays(int nums[]){
         int currSum=0;
@@ -151,7 +195,7 @@ public class Solution{
     }
 
 
-    // 06. Buy and Sell Stock....
+    // 06.. Buy and Sell Stock... 
     public static int bestTimeToBuyAndSellStock(int []prices) {
         // Write your code here.
         int buyPrice=Integer.MAX_VALUE;
@@ -167,14 +211,6 @@ public class Solution{
         }
         return maxprofit;
     }
-
-
-
-
-
-
-
-
 
 
 
@@ -206,10 +242,6 @@ public class Solution{
          int[] arr = {2, 2, 1, 1, 1, 2, 2};
         int ans = majorityElement(arr);
         System.out.println("The majority element is: " + ans);
-
-        // Sum of SubArrays and print max sum.....
-        int nums[]={2,4,6,8,10};
-        printSumofSubArrays(numbers);
 
     }
 }
