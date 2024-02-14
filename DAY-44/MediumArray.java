@@ -212,16 +212,33 @@ public class Solution{
         return maxprofit;
     }
 
+
+
     // 07. Rearranging the array in alternating +ve and -ve signs..
 
     // Brute Approach... O(N + N/2)..
+    public static int[] RearrangebySign(int[] A, int n){
     
+        ArrayList<Integer> pos=new ArrayList<>();
+        ArrayList<Integer> neg=new ArrayList<>();
+        
+        // Segregate the array into positives and negatives.
+        for(int i=0;i<n;i++){
+            
+            if(A[i]>0) pos.add(A[i]);
+            else neg.add(A[i]);
+        }
+        
+        // Positives on even indices, negatives on odd.
+        for(int i=0;i<n/2;i++){
+            
+            A[2*i] = pos.get(i);
+            A[2*i+1] = neg.get(i);
+        }
 
-
-
-
-
-
+        
+        return A;
+    }   
 
     // Optimal Approach ... O(n)
     public static ArrayList<Integer> RearrangebySign(ArrayList<Integer> A, int n) {
