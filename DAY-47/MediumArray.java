@@ -318,6 +318,25 @@ public class Solution{
 
         return ans;
     }
+
+    // 10. Longest Consecutive Sequence 
+    public static int longestSuccessiveElements(int []a) {
+        // Write your code here.
+        Arrays.sort(a);
+        int n=a.length;
+        int cnt=1;
+        int maxcnt=1;
+        for(int i=1;i<n;i++){
+            if(a[i]==a[i-1]+1){
+                cnt++;
+                maxcnt=Math.max(maxcnt,cnt);
+            }
+            else if (a[i] != a[i - 1]){
+                cnt=1;
+            }
+        }
+        return maxcnt;
+    }
     
 
 
