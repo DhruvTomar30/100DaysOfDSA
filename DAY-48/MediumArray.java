@@ -352,7 +352,6 @@ public class Solution{
                     // mark jth index of col wih 1:
                     col[j] = 1;
                 }
-            
             }
         }
         for (int i = 0; i < n; i++) {
