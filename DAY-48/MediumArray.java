@@ -338,7 +338,7 @@ public class Solution{
         return maxcnt;
     }
     // 11. zero matrix..
-     // 11. Zero Matrix...
+    // Better Approach .. O(2*(N*M))
     public static ArrayList<ArrayList<Integer>> zeroMatrix(ArrayList<ArrayList<Integer>> matrix, Integer n, Integer m) {
     	// Write your code here.
         int[] row = new int[n]; // row array
