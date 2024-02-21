@@ -246,7 +246,7 @@ public class Solution{
         // and other for negative elements of the array.
         ArrayList<Integer> pos = new ArrayList<>();
         ArrayList<Integer> neg = new ArrayList<>();
-        
+
         // Segregate the array into positives and negatives.
         for (int i = 0; i < n; i++) {
             if (A.get(i) > 0)
@@ -254,7 +254,6 @@ public class Solution{
             else
                 neg.add(A.get(i));
         }
-
         // If positives are lesser than the negatives.
         if (pos.size() < neg.size()) {
 
