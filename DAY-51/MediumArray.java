@@ -279,7 +279,6 @@ public class Solution{
                 A.set(2 * i, pos.get(i));
                 A.set(2 * i + 1, neg.get(i));
             }
-
             // Fill the remaining positives at the end of the array.
             int index = neg.size() * 2;
             for (int i = neg.size(); i < pos.size(); i++) {
