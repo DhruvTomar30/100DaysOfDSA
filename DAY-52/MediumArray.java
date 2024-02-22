@@ -451,7 +451,6 @@ public class Solution{
 
 
 
-
     // Optimal Approach.... 
     public static int findAllSubarraysWithGivenSum(int arr[], int k) {
         int n = arr.length; // size of the given array.
