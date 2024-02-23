@@ -1,5 +1,5 @@
 public class Main{
-    
+
     // Pascal's Triangle.....
     public static long nCr(int n, int r) {
         long res = 1;
@@ -16,7 +16,6 @@ public class Main{
         int element = (int) nCr(r - 1, c - 1);
         return element;
     }
-
     public static void main(String[] args) {
         int r = 5; // row number
         int c = 3; // col number
