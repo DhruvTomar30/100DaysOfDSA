@@ -50,5 +50,8 @@ public class Main{
         int c = 3; // col number
         int element = pascalTriangle(r, c);
         System.out.println("The element at position (r,c) is: " + element);
+
+        // Variant 2.. 
+        pascalTriangle(n);
     }
 }
