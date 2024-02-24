@@ -1,6 +1,6 @@
 public class Main{
 
-    // Pascal's Triangle.....
+    // 01.. Pascal's Triangle.....
     public static long nCr(int n, int r) {
         long res = 1;
 
