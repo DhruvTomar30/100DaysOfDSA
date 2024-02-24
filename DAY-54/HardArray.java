@@ -16,7 +16,18 @@ public class Main{
         int element = (int) nCr(r - 1, c - 1);
         return element;
     }
+
+
+
+
+
+
+
+
+    // Main.....
     public static void main(String[] args) {
+
+        // 01. Pascal's Triangle..
         int r = 5; // row number
         int c = 3; // col number
         int element = pascalTriangle(r, c);
