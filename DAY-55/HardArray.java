@@ -66,6 +66,7 @@ public class Main{
         return ls;
     }
 
+
     // Optimal Approach... 
     public static List<Integer> majorityElement(int []v) {
         int n = v.length; //size of the array
