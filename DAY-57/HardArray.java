@@ -64,6 +64,7 @@ public class Main{
 
         return ls;
     }
+    
 
     // Optimal Approach... 
     public static List<Integer> majorityElement(int []v) {
