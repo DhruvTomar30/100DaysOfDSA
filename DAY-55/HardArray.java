@@ -93,7 +93,6 @@ public class Main{
             if (v[i] == el1) cnt1++;
             if (v[i] == el2) cnt2++;
         }
-
         int mini = (int)(n / 3) + 1;
         if (cnt1 >= mini) ls.add(el1);
         if (cnt2 >= mini) ls.add(el2);
