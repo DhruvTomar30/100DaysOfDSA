@@ -103,7 +103,7 @@ public class Main{
 
     // 3 Sum code... 
     // Better Code..
-     public static List<List<Integer>> triplet(int n, int[] arr) {
+    public static List<List<Integer>> triplet(int n, int[] arr) {
         Set<List<Integer>> st = new HashSet<>();
 
         for (int i = 0; i < n; i++) {
