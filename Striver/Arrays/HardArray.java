@@ -159,7 +159,6 @@ public class Main{
                 }
             }
         }
-
         return ans;
     }
 
@@ -172,7 +171,7 @@ public class Main{
         int element = pascalTriangle(r, c);
         System.out.println("The element at position (r,c) is: " + element);
 
-        // Variant 2.. 
+        // Variant 2..
         pascalTriangle(n);
     }
 }
