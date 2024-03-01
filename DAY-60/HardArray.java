@@ -16,8 +16,8 @@ public class Main{
         int element = (int) nCr(r - 1, c - 1);
         return element;
     }
-    // Variant 2.... 
     
+    // Variant 2.... 
     public static long nCr(int n, int r) {
         long res = 1;
 
