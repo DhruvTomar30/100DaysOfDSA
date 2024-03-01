@@ -17,7 +17,6 @@ public class Main{
         return element;
     }
 
-    
     // Variant 2.... 
     public static long nCr(int n, int r) {
         long res = 1;
