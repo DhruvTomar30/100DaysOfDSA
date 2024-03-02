@@ -15,6 +15,7 @@ public class Main{
                     row.add(result.get(i-2).get(j)+result.get(i-2).get(j-1));       //1   --0+1     //2    --1+2
                 }
             }
+            // result=row;
             result.add(row);
         }
         return result;
@@ -56,7 +57,7 @@ public class Main{
         }
         System.out.println();
     }
-    
+
 
     // 02.  Majority Element (n/3)....
     // Better Approach...
