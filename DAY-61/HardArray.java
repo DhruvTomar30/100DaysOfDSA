@@ -37,7 +37,7 @@ public class Main{
         System.out.println();
     }
 
-    // 02. Majority Element (n/3)....
+    // 02.  Majority Element (n/3)....
     // Better Approach...
     public static List<Integer> majorityElement(int []v) {
         int n = v.length; //size of the array
@@ -100,7 +100,7 @@ public class Main{
     }
 
 
-    // 3 Sum code... 
+    // Ques-03   3 Sum code... 
     // Better Code..
      public static List<List<Integer>> triplet(int n, int[] arr) {
         Set<List<Integer>> st = new HashSet<>();
