@@ -1,6 +1,26 @@
 public class Main{
 
     // 01.. Pascal's Triangle..... (variant 1)....
+    // Brute Approach...    O(n^2)
+     public List<List<Integer>> generate(int numRows) {
+        if(numRows==0) return new ArrayList();
+        List<List<Integer>> result=new ArrayList();
+        for(int i=1;i<=numRows;i++){    // for rows (5)..
+            List<Integer> row= new ArrayList();     // ----> 1,2,3,4,5
+            for(int j=0; j<i;j++){          // row index..
+                if(j==0 || j==i-1) {
+                    row.add(1);
+                }
+                else{
+                    row.add(result.get(i-2).get(j)+result.get(i-2).get(j-1));       //1   --0+1     //2    --1+2
+                }
+            }
+            result.add(row);
+        }
+        return result;
+    }
+
+    // optimal Approaches variant 1....
     public static long nCr(int n, int r) {
         long res = 1;
 
@@ -36,6 +56,7 @@ public class Main{
         }
         System.out.println();
     }
+    
 
     // 02.  Majority Element (n/3)....
     // Better Approach...
