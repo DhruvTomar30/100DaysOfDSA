@@ -20,6 +20,7 @@ public class Main{
         return result;
     }
 
+
     // optimal Approaches variant 1....
     public static long nCr(int n, int r) {
         long res = 1;
