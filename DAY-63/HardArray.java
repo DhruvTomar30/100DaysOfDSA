@@ -20,10 +20,10 @@ public class Main{
         return result;
     }
 
+
     // optimal Approaches variant 1....
     public static long nCr(int n, int r) {
         long res = 1;
-
         // calculating nCr:
         for (int i = 0; i < r; i++) {
             res = res * (n - i);
@@ -31,7 +31,6 @@ public class Main{
         }
         return res;
     }
-
     public static int pascalTriangle(int r, int c) {
         int element = (int) nCr(r - 1, c - 1);
         return element;
@@ -48,7 +47,6 @@ public class Main{
         }
         return res;
     }
-
     public static void pascalTriangle(int n) {
         // printing the entire row n:
         for (int c = 1; c <= n; c++) {
@@ -59,34 +57,49 @@ public class Main{
 
 
     // 02.  Majority Element (n/3)....
-    // Better Approach...
-    public static List<Integer> majorityElement(int []v) {
-        int n = v.length; //size of the array
-        List<Integer> ls = new ArrayList<>(); // list of answers
-
-        //declaring a map:
-        HashMap<Integer, Integer> mpp = new HashMap<>();
-
-        // least occurrence of the majority element:
-        int mini = (int)(n / 3) + 1;
-
-        //storing the elements with its occurnce:
-        for (int i = 0; i < n; i++) {
-            int value = mpp.getOrDefault(v[i], 0);
-            mpp.put(v[i], value + 1);
-
-            //checking if v[i] is
-            // the majority element:
-            if (mpp.get(v[i]) == mini) {
-                ls.add(v[i]);
+     // Brute Approach..
+    public List<Integer> majorityElement(int[] nums) {
+     List<Integer> ans=new ArrayList<>();
+        int n=nums.length;
+        for(int i=0;i<n;i++){
+            int cnt=0;
+            for(int j=0;j<n;j++){
+                if(nums[j]==nums[i]){
+                    cnt++;
+                }
             }
-            if (ls.size() == 2) break;
+             if (cnt > n / 3 && !ans.contains(nums[i])){
+                ans.add(nums[i]);
+            }
         }
+        return ans;
+    }
 
-        return ls;
+    // Better Approach...
+    public List<Integer> majorityElement(int[] nums) {
+        List<Integer> ans=new ArrayList<>();
+        int n=nums.length;
+        HashMap<Integer,Integer>map=new HashMap<>();
+        for(int i=0;i<n;i++){
+            int value=map.getOrDefault(nums[i],0);
+            if(map.containsKey(nums[i])){
+                map.put(nums[i],map.get(nums[i])+1);
+            }
+            else{
+                map.put(nums[i],1);
+            }
+        }
+        // searching.
+        for(Map.Entry<Integer,Integer>entry: map.entrySet()){
+            // int ans=new int[n];
+            if(entry.getValue()>n/3){
+               ans.add(entry.getKey());
+            }
+        }
+        return ans;
     }
     
-    // Optimal Approach... 
+    // Optimal Approach... (Extended Boyer Moore's Voting algo)..
     public static List<Integer> majorityElement(int []v) {
         int n = v.length; //size of the array
         int cnt1 = 0, cnt2 = 0; // counts
