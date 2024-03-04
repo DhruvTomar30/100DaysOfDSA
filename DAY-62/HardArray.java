@@ -78,30 +78,27 @@ public class Main{
     }
 
     // Better Approach...
-    public static List<Integer> majorityElement(int []v) {
-        int n = v.length; //size of the array
-        List<Integer> ls = new ArrayList<>(); // list of answers
-
-        //declaring a map:
-        HashMap<Integer, Integer> mpp = new HashMap<>();
-
-        // least occurrence of the majority element:
-        int mini = (int)(n / 3) + 1;
-
-        //storing the elements with its occurnce:
-        for (int i = 0; i < n; i++) {
-            int value = mpp.getOrDefault(v[i], 0);
-            mpp.put(v[i], value + 1);
-
-            //checking if v[i] is
-            // the majority element:
-            if (mpp.get(v[i]) == mini) {
-                ls.add(v[i]);
+    public List<Integer> majorityElement(int[] nums) {
+        List<Integer> ans=new ArrayList<>();
+        int n=nums.length;
+        HashMap<Integer,Integer>map=new HashMap<>();
+        for(int i=0;i<n;i++){
+            int value=map.getOrDefault(nums[i],0);
+            if(map.containsKey(nums[i])){
+                map.put(nums[i],map.get(nums[i])+1);
             }
-            if (ls.size() == 2) break;
+            else{
+                map.put(nums[i],1);
+            }
         }
-
-        return ls;
+        // searching.
+        for(Map.Entry<Integer,Integer>entry: map.entrySet()){
+            // int ans=new int[n];
+            if(entry.getValue()>n/3){
+               ans.add(entry.getKey());
+            }
+        }
+        return ans;
     }
     
     // Optimal Approach... 
