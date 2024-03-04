@@ -59,6 +59,24 @@ public class Main{
 
 
     // 02.  Majority Element (n/3)....
+     // Brute Approach..
+    public List<Integer> majorityElement(int[] nums) {
+     List<Integer> ans=new ArrayList<>();
+        int n=nums.length;
+        for(int i=0;i<n;i++){
+            int cnt=0;
+            for(int j=0;j<n;j++){
+                if(nums[j]==nums[i]){
+                    cnt++;
+                }
+            }
+             if (cnt > n / 3 && !ans.contains(nums[i])){
+                ans.add(nums[i]);
+            }
+        }
+        return ans;
+    }
+
     // Better Approach...
     public static List<Integer> majorityElement(int []v) {
         int n = v.length; //size of the array
