@@ -101,7 +101,7 @@ public class Main{
         return ans;
     }
     
-    // Optimal Approach... 
+    // Optimal Approach... (Extended Boyer Moore's Voting algo)..
     public static List<Integer> majorityElement(int []v) {
         int n = v.length; //size of the array
         int cnt1 = 0, cnt2 = 0; // counts
