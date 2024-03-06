@@ -304,6 +304,7 @@ public class Main{
                 return a[0] - b[0];
             }
         });
+        
         List<List<Integer>> ans = new ArrayList<>();
         for (int i = 0; i < n; i++) { // select an interval:
             int start = arr[i][0];
